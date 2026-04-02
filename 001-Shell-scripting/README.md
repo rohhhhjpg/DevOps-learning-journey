@@ -32,64 +32,64 @@ Shell scripting is important for DevOps engineers because:
 
 ### ■ Shell Scripting Basics
 
-* [ ] What is Shell Scripting
-* [ ] Shebang (`#!/bin/bash`)
-* [ ] echo command
-* [ ] cat command
-* [ ] chmod permissions
-* [ ] Executing scripts
+* [x] What is Shell Scripting
+* [x] Shebang (`#!/bin/bash`)
+* [x] echo command
+* [x] cat command
+* [x] chmod permissions
+* [x] Executing scripts
 
 ---
 
 ### ■ Linux Commands Used
 
-* [ ] ls
-* [ ] touch
-* [ ] man
-* [ ] pwd
-* [ ] mkdir
-* [ ] cd
-* [ ] history
+* [x] ls
+* [x] touch
+* [x] man
+* [x] pwd
+* [x] mkdir
+* [x] cd
+* [x] history
 
 ---
 
 ### ■ Script Creation
 
-* [ ] Creating shell scripts
-* [ ] Comments in shell scripts
-* [ ] Executing scripts
-* [ ] File creation automation
+* [x] Creating shell scripts
+* [x] Comments in shell scripts
+* [x] Executing scripts
+* [x] File creation automation
 
 ---
 
 ### ■ Monitoring Commands
 
-* [ ] top
-* [ ] ps
-* [ ] df
-* [ ] free
-* [ ] nproc
+* [x] top
+* [x] ps
+* [x] df
+* [x] free
+* [x] nproc
 
 ---
 
 ### ■ Advanced Shell Scripting
 
-* [ ] grep command
-* [ ] piping (`|`)
-* [ ] awk command
-* [ ] curl command
-* [ ] wget command
-* [ ] find command
+* [x] grep command
+* [x] piping (`|`)
+* [x] awk command
+* [x] curl command
+* [x] wget command
+* [x] find command
 
 ---
 
 ### ■ Logic & Automation
 
-* [ ] if condition
-* [ ] if-else
-* [ ] for loops
-* [ ] trap command
-* [ ] error handling
+* [x] if condition
+* [x] if-else
+* [x] for loops
+* [x] trap command
+* [x] error handling
 
 ---
 
@@ -105,15 +105,11 @@ Shell scripting is important for DevOps engineers because:
 
 ## ■ Files In This Folder
 
-| File                      | Topic Covered                 | Date |
-| ------------------------- | ----------------------------- | ---- |
-| day-01-shell-basics.md    | Introduction & Basic Commands |      |
-| day-02-script-creation.md | Creating Shell Scripts        |      |
-| day-03-permissions.md     | chmod & execution             |      |
-| day-04-monitoring.md      | top, ps, df                   |      |
-| day-05-advanced.md        | grep, awk, pipe               |      |
-| day-06-logic.md           | if, loops                     |      |
-| day-07-trap.md            | trap command                  |      |
+| File                      | Topic Covered                 | Date       |
+| ------------------------- | ----------------------------- | ---------- |
+| shell-part-1.md           | Day 1 Shell playlist          | 01/04/2026 |
+| shell-part-2.md           | Day 2 Shell playlist          | 02/04/2026 |
+
 
 ---
 
