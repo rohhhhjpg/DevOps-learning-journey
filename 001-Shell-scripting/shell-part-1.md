@@ -52,6 +52,7 @@ rm -rf - remove directory along with files
 nproc - To list the no of cpu's in the machine
 free - to check the memory
 top - Identify all the process running in  our machine
+df - list all the available storage in the system
 
 ```
 
