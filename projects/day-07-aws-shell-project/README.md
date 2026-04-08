@@ -1,105 +1,217 @@
-# ■ Day-07 — AWS Usage Report using Shell Script
+■ Day 07 — AWS Resource Tracker (Shell Project)
+■ Date
 
-## ■ Project Name
+08-04-2026
+---
 
-AWS Usage Report using Shell Script
+■ Topics Learned
+
+* AWS CLI commands
+* Shell scripting automation
+* JSON parsing using jq
+* Redirecting output to file
+* Automating AWS resource monitoring
+* Cron job scheduling
+* Linux automation
+* Debugging shell script errors
 
 ---
 
-## ■ Project Description
+■ Commands Learned
 
-This project creates a shell script that reports AWS resource usage.
-
-The script helps DevOps engineers monitor:
-
-* EC2 Instances
-* S3 Buckets
-* Lambda Functions
-* IAM Users
-
+```bash
+aws s3 ls
+aws ec2 describe-instances
+aws lambda list-functions
+aws iam list-users
+jq
+chmod
+crontab -e
+crontab -l
+echo
+>>
+>
+```
 ---
 
-## ■ Tools Used
+■ Script Created
 
-* AWS CLI
-* Shell Scripting
-* Linux
-
----
-
-## ■ Prerequisites
-
-* AWS CLI Installed
-* AWS Configured
-* Bash Shell
-
----
-
-## ■ Shell Script
+AWS Resource Tracker Script
 
 ```bash
 #!/bin/bash
 
-echo "Print list of EC2 instances"
-aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId'
+######################
+# Aurthor: Rohith
+# Date: 08th-Apr
+#
+# Version:1
+#
+# This script will report the AWS resource usage
+######################
 
-echo "Print list of S3 Buckets"
-aws s3 ls
 
-echo "Print list of Lambda functions"
-aws lambda list-functions
+# AWS s3
+# AWS Ec2
+# AWS Lambda
+# AWS IAM Users
+set -x
 
-echo "Print list of IAM Users"
-aws iam list-users
-```
+# List s3 buckets
+echo "print list of s3 buckets"
+aws s3 ls > ResourceTracker
+
+# List Ec2 Instances
+echo "print list of ec2 instances"
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId' >> ResourceTracker
+
+# List AWS Lambda functions
+echo "Print list of lambda functions"
+aws lambda list-functions >> ResourceTracker
+
+# List AWS IAM Users
+echo "print list of IAM Users"
+aws iam list-users >> ResourceTracker
+```   
+---
+
+■ What is jq ?
+
+jq is a lightweight JSON processor used to parse JSON output.
+
+AWS CLI commands return large JSON formatted output.
+
+Example:
+
+aws ec2 describe-instances
+
+This returns a huge JSON output.
+
+Using jq:
+
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+This filters only:
+
+Instance ID
 
 ---
 
-## ■ How to Run
+■ Why We Use jq
 
-Make executable:
+* Clean output
+* Easy filtering
+* Script friendly
+* DevOps automation
+---
+
+■ Cron Integration
+
+Cron is used to schedule scripts automatically.
+
+Cron Entry:
 
 ```bash
-chmod +x aws_usage.sh
-```
+0 18 * * * /home/ubuntu/aws-resource-tracker.sh
+``` 
+This runs:
 
-Run script:
-
-```bash
-./aws_usage.sh
-```
+Every day at 6 PM
 
 ---
 
-## ■ Output
+■ What is Cron ?
 
-Displays:
+Cron is a Linux scheduler used to automate tasks.
 
-* EC2 Instances
+Used for:
+
+* Automation
+* Monitoring
+* Backups
+* DevOps scripting
+
+---
+
+■ Cron Format
+
+```bash
+* * * * *
+| | | | |
+| | | | + Day of week
+| | | + Month
+| | + Day
+| + Hour
++ Minute
+``` 
+---
+
+■ Cron Examples
+
+Run every 5 minutes
+```bash
+*/5 * * * *
+``` 
+Run every hour
+```bash
+0 * * * *
+``` 
+Run every day 6 PM
+```bash
+0 18 * * *
+```
+---
+
+■ Use Case
+
+Monitor AWS resources automatically
+
+Script collects:
+
 * S3 Buckets
+* EC2 Instances
 * Lambda Functions
 * IAM Users
 
+Output stored in:
+ResourceTracker
 ---
 
-## ■ Use Case
+■ What I Learned
 
-DevOps engineers use this script to:
-
-* Monitor AWS resources
-* Audit infrastructure
-* Automate reporting
-
----
-
-## ■ Learning Outcome
-
-* AWS CLI commands
 * Shell scripting automation
-* DevOps monitoring basics
-
+* AWS CLI usage
+* jq JSON parsing
+* Cron scheduling
+* Script permissions
+* Output redirection
+* DevOps automation
 ---
 
-## ■ Notes
+■ Learning Outcome
 
-This is a basic automation script for AWS resource monitoring.
+* Shell scripting
+* AWS automation
+* Cron scheduling
+* DevOps scripting
+---
+
+■ Project Summary
+
+This is my first DevOps shell scripting project.
+
+Automated AWS resource monitoring using:
+
+* Shell scripting
+* AWS CLI
+* jq
+* Cron
+---
+
+■ First DevOps Shell Script Project Completed
+
+AWS Resource Tracker
+Shell Script Automation
+Cron Scheduling
+
+First Project Completed ✅
